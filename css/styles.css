@@ -24,7 +24,7 @@ body {
   height: 100%;
   padding: 0;
   margin: 0;
-  font-family: "Roboto" "Arial" sans-serif;
+  font-family: "Roboto",  sans-serif;
   font-size: 16px;
   line-height: 1.5;
   background-color: #fff;
@@ -72,6 +72,31 @@ img {
 
 .button:active {
   opacity: 0.6;
+}
+
+/* BUTTON */
+.lined-link {
+  display: inline-flex;
+  align-items: center;
+  font-size: 16px;
+  height: 1.6;
+  font-weight: bold;
+  color: var(--primary);
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
+.lined-link::before {
+  width: 40px;
+  height: 3px;
+  margin-right: 10px;
+  background-color: var(--primary);
+  content: "";
+  transition: width 0.3s ease;
+}
+
+.lined-link:hover::before {
+  width: 60px;
 }
 
 /* MAIN-CONTENT */
@@ -193,11 +218,16 @@ only screen and (                min-resolution: 192dpi),
 only screen and (                min-resolution: 2dppx) {
 
   .hero {
-    background-image: url(../img/intro-bg@2x.jpg)
+    background-image: url("../img/intro-bg@2x.jpg")
   }
 }
 
 /* FEATURES */
+.features {
+padding-top: 70px;
+padding-bottom: 70px;
+}
+
 .features-list {
   display: flex;
   padding: 0;
@@ -205,16 +235,36 @@ only screen and (                min-resolution: 2dppx) {
   list-style: none;
 }
 
+.features-item {
+  width: 280px;
+}
+
 .features-item:not(:last-child) {
   margin-right: 80px;
 }
 
 .features-heading {
+  font-size: 18px;
+  line-height: 1.5;
+  text-transform: uppercase;
   margin-top: 0;
   margin-bottom: 30px;
+}
 
-}
 .features-text {
+  margin-top: 0;
+  margin-bottom: 20px;
+  font-size: 15px;
+  line-height: 1.6;
+  color: #333;
 }
+
 .features-divider {
+  width: 8px;
+  height: 8px;
+  bottom: 0;
+  background-color: #ddd;
+  margin: 0;
+  box-shadow: 16px 0 0 0 #ddd,
+    32px 0 0 0 #ddd;
 }
